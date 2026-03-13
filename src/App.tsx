@@ -43,8 +43,7 @@ const PROJECTS_DATA = [
     title: "Built Under Pressure. Recognised on a National Stage.",
     desc: "As part of Smart India Hackathon 2025, our team built a solution under 36-hour sprint conditions. I led the frontend from wireframe to working interface while coordinating with teammates on integration in real time.",
     category: "SIH 2025 Lead Frontend",
-    imgUrl:
-      "/sih.webp",
+    imgUrl: "/sih.webp",
     projectUrl: "https://github.com/Harsh231075/Tashi-Delek",
   },
 ];
@@ -286,7 +285,9 @@ const Hero = () => {
 // --- PHILOSOPHY SECTION COMPONENT ---
 const Philosophy = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollProgress = useTextRevealScroll(containerRef as React.RefObject<HTMLElement>);
+  const scrollProgress = useTextRevealScroll(
+    containerRef as React.RefObject<HTMLElement>
+  );
 
   return (
     <section
@@ -769,7 +770,9 @@ const Achievements = () => {
 // --- ABOUT SECTION COMPONENT ---
 const About = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollProgress = useTextRevealScroll(containerRef as React.RefObject<HTMLElement>);
+  const scrollProgress = useTextRevealScroll(
+    containerRef as React.RefObject<HTMLElement>
+  );
 
   return (
     <section
@@ -836,7 +839,9 @@ const Contact = () => {
         </h2>
 
         <p className="font-body text-[#A1A1AA] text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-2xl mb-12 md:mb-16">
-          You need a frontend developer who ships fast, thinks clearly, and takes ownership. I'm ready. Whether it's an internship, a project, or a conversation, my inbox is open.
+          You need a frontend developer who ships fast, thinks clearly, and
+          takes ownership. I'm ready. Whether it's an internship, a project, or
+          a conversation, my inbox is open.
         </p>
 
         <a
@@ -851,7 +856,7 @@ const Contact = () => {
 
         <div className="w-full pt-8 md:pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6">
           <div className="font-accent text-[#A1A1AA] text-[10px] md:text-xs uppercase tracking-widest">
-            © {new Date().getFullYear()} Kritagya Jaiswal 
+            © {new Date().getFullYear()} Kritagya Jaiswal
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
