@@ -24,4 +24,3 @@ This portfolio is built to present:
 - `public/` → Static assets
 - `index.html` → Entry HTML
 - `vite.config.ts` → Vite configuration
-

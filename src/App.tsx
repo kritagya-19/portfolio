@@ -285,8 +285,8 @@ const Hero = () => {
 
 // --- PHILOSOPHY SECTION COMPONENT ---
 const Philosophy = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  const scrollProgress = useTextRevealScroll(containerRef);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollProgress = useTextRevealScroll(containerRef as React.RefObject<HTMLElement>);
 
   return (
     <section
@@ -768,8 +768,8 @@ const Achievements = () => {
 
 // --- ABOUT SECTION COMPONENT ---
 const About = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  const scrollProgress = useTextRevealScroll(containerRef);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollProgress = useTextRevealScroll(containerRef as React.RefObject<HTMLElement>);
 
   return (
     <section
