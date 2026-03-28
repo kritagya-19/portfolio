@@ -1,10 +1,25 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Download, ArrowUpRight, ExternalLink, Trophy, Medal, Award, Sparkles } from 'lucide-react';
+import React, { useEffect, useRef, useState } from "react";
+import {
+  ArrowRight,
+  Download,
+  ArrowUpRight,
+  ExternalLink,
+  Trophy,
+  Medal,
+  Award,
+  Sparkles,
+} from "lucide-react";
 
 // --- STATIC DATA (Extracted for Performance) ---
-const PHILOSOPHY_WORDS = "There's a difference between a developer who codes and a developer who thinks. I sit at the intersection of clean frontend engineering, conversion-focused design, and AI-native development which means I move faster, build smarter, and deliver work that actually serves a business goal. I'm not here to write boilerplate. I'm here to solve problems.".split(" ");
+const PHILOSOPHY_WORDS =
+  "There's a difference between a developer who codes and a developer who thinks. I sit at the intersection of clean frontend engineering, conversion-focused design, and AI-native development which means I move faster, build smarter, and deliver work that actually serves a business goal. I'm not here to write boilerplate. I'm here to solve problems.".split(
+    " "
+  );
 
-const ABOUT_WORDS = "I'm Kritagya — a 20-year-old Computer Science student at Chameli Devi Group of Institutions, Indore, with hands-on freelancing experience building real products for real clients. I started building on the web because I was obsessed with one question: why do some digital experiences make you feel something, and most don't? That obsession turned into a skillset. I learned HTML, CSS, JavaScript, and React — and then pushed further into AI-native development, which lets me build faster and think at a systems level most junior developers don't reach for years. Outside of code, I read deeply into human psychology, philosophy, and how people make decisions. That's not a hobby that lives separately from my work — it's why my interfaces feel intentional. I'm currently in my third year of BTech. I'm not looking for something to put on a CV. I'm looking to build things that matter.".split(" ");
+const ABOUT_WORDS =
+  "I'm Kritagya — a 20-year-old Computer Science student at Chameli Devi Group of Institutions, Indore, with hands-on freelancing experience building real products for real clients. I started building on the web because I was obsessed with one question: why do some digital experiences make you feel something, and most don't? That obsession turned into a skillset. I learned HTML, CSS, JavaScript, and React — and then pushed further into AI-native development, which lets me build faster and think at a systems level most junior developers don't reach for years. Outside of code, I read deeply into human psychology, philosophy, and how people make decisions. That's not a hobby that lives separately from my work — it's why my interfaces feel intentional. I'm currently in my third year of BTech. I'm not looking for something to put on a CV. I'm looking to build things that matter.".split(
+    " "
+  );
 
 const PROJECTS_DATA = [
   {
@@ -13,7 +28,7 @@ const PROJECTS_DATA = [
     desc: "Built a high-converting landing page from the ground up — structured around proven persuasion frameworks, mobile-first responsive layout, and sub-2s load times. Every section was written and designed to guide the visitor toward one action.",
     category: "Conversion & Performance",
     imgUrl: "/beauty.webp",
-    projectUrl: "https://beautyhub-flax.vercel.app/" 
+    projectUrl: "https://beautyhub-flax.vercel.app/",
   },
   {
     id: "02",
@@ -21,7 +36,7 @@ const PROJECTS_DATA = [
     desc: "Designed and developed a complete web application using React on the frontend, with AI-assisted backend logic and database integration. Handled everything from component architecture to deployment — demonstrating that one developer with the right tools can replace a small team's output.",
     category: "Full-Stack AI Engineering",
     imgUrl: "/nanofile.webp",
-    projectUrl: "http://nano-file.vercel.app/" 
+    projectUrl: "http://nano-file.vercel.app/",
   },
   {
     id: "03",
@@ -29,27 +44,41 @@ const PROJECTS_DATA = [
     desc: "As part of Smart India Hackathon 2025, our team engineered a solution under 36-hour sprint conditions. I led the frontend — from wireframe to working interface — while coordinating with teammates on integration in real time.",
     category: "SIH 2025 Lead Frontend",
     imgUrl: "/sih.webp",
-    projectUrl: "https://github.com/Harsh231075/Tashi-Delek" 
-  }
+    projectUrl: "https://github.com/Harsh231075/Tashi-Delek",
+  },
 ];
 
 const SKILLS_CATEGORIES = [
   {
     title: "Frontend Development",
-    skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS"]
+    skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS"],
   },
   {
     title: "AI & Modern Development",
-    skills: ["Prompt Engineering", "Vibe Coding", "AI Automation (Make.com, n8n)", "ChatGPT", "Claude", "Gemini"]
+    skills: [
+      "Prompt Engineering",
+      "Vibe Coding",
+      "AI Automation (Make.com, n8n)",
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+    ],
   },
   {
     title: "Developer Tools",
-    skills: ["VS Code", "Git & GitHub", "Cursor", "Claude Code", "Antigravity"]
+    skills: ["VS Code", "Git & GitHub", "Cursor", "Claude Code", "Antigravity"],
   },
   {
     title: "What Makes the Work Convert",
-    skills: ["Landing Page Optimisation", "Conversion-Focused UI", "Consumer Psychology", "Content Strategy", "Personal Branding", "Persuasion Architecture"]
-  }
+    skills: [
+      "Landing Page Optimisation",
+      "Conversion-Focused UI",
+      "Consumer Psychology",
+      "Content Strategy",
+      "Personal Branding",
+      "Persuasion Architecture",
+    ],
+  },
 ];
 
 const ACHIEVEMENTS_DATA = [
@@ -58,22 +87,22 @@ const ACHIEVEMENTS_DATA = [
     title: "SIH 2025 Finalist",
     subtitle: "Smart India Hackathon",
     desc: "One of the most competitive collegiate tech competitions in the country. We made it to the final round.",
-    icon: Trophy
+    icon: Trophy,
   },
   {
     id: "02",
     title: "SnowHack 2026",
     subtitle: "Overall Winner",
     desc: "Competed, built, and won. Delivered a complete solution under time pressure that beat every other team in the room.",
-    icon: Medal
+    icon: Medal,
   },
   {
     id: "03",
     title: "Vibeathon",
     subtitle: "1st Place Winner",
     desc: "Won my college's AI website-building competition. Built a fully functional, AI-assisted website faster and better than anyone else.",
-    icon: Award
-  }
+    icon: Award,
+  },
 ];
 
 const EXPERTISE_SERVICES = [
@@ -90,7 +119,7 @@ const EXPERTISE_SERVICES = [
           <div className="w-2 h-2 bg-[#D6B87C] rounded-full shadow-[0_0_20px_#D6B87C]"></div>
         </div>
       </div>
-    )
+    ),
   },
   {
     id: "02",
@@ -100,13 +129,22 @@ const EXPERTISE_SERVICES = [
       <div className="relative w-full h-full rounded-[2rem] flex items-center justify-center bg-[#070707] border border-white/10 shadow-2xl overflow-hidden">
         <div className="absolute w-[200%] h-[200%] bg-[radial-gradient(ellipse_at_center,rgba(214,184,124,0.05)_0%,transparent_50%)] animate-pulse"></div>
         <div className="absolute w-[80%] h-[80%] animate-[spin_12s_linear_infinite]">
-          <div className="absolute inset-8 border border-[#D6B87C]/30 rounded-full" style={{ transform: 'rotate(0deg) scale(1, 0.35)' }}></div>
-          <div className="absolute inset-8 border border-[#D6B87C]/30 rounded-full" style={{ transform: 'rotate(60deg) scale(1, 0.35)' }}></div>
-          <div className="absolute inset-8 border border-[#D6B87C]/30 rounded-full" style={{ transform: 'rotate(120deg) scale(1, 0.35)' }}></div>
+          <div
+            className="absolute inset-8 border border-[#D6B87C]/30 rounded-full"
+            style={{ transform: "rotate(0deg) scale(1, 0.35)" }}
+          ></div>
+          <div
+            className="absolute inset-8 border border-[#D6B87C]/30 rounded-full"
+            style={{ transform: "rotate(60deg) scale(1, 0.35)" }}
+          ></div>
+          <div
+            className="absolute inset-8 border border-[#D6B87C]/30 rounded-full"
+            style={{ transform: "rotate(120deg) scale(1, 0.35)" }}
+          ></div>
         </div>
         <div className="w-5 h-5 bg-[#D6B87C] rounded-full shadow-[0_0_30px_#D6B87C] animate-pulse relative z-10"></div>
       </div>
-    )
+    ),
   },
   {
     id: "03",
@@ -121,8 +159,8 @@ const EXPERTISE_SERVICES = [
           <Sparkles className="w-6 h-6 text-[#D6B87C] animate-pulse" />
         </div>
       </div>
-    )
-  }
+    ),
+  },
 ];
 
 // --- OPTIMIZATION: IntersectionObserver added to pause heavy math when offscreen ---
@@ -145,16 +183,16 @@ const useTextRevealScroll = (containerRef: React.RefObject<HTMLElement>) => {
         if (!containerRef.current) return;
         const { top, height } = containerRef.current.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
-        const revealDistance = height - (2.2 * viewportHeight);
+        const revealDistance = height - 2.2 * viewportHeight;
         const progress = Math.max(0, Math.min(1, -top / (revealDistance || 1)));
         setScrollProgress(progress);
       });
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); 
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(rafId);
       observer.disconnect();
     };
@@ -163,16 +201,15 @@ const useTextRevealScroll = (containerRef: React.RefObject<HTMLElement>) => {
   return scrollProgress;
 };
 
-
 // --- LOADING SCREEN COMPONENT ---
 const LoadingScreen = ({ stage }: { stage: string }) => {
-  if (stage === 'ready') return null;
-  const word = ['K', 'r', 'i', 't', 'a', 'g', 'y', 'a'];
+  if (stage === "ready") return null;
+  const word = ["K", "r", "i", "t", "a", "g", "y", "a"];
 
   return (
-    <div 
+    <div
       className={`fixed inset-0 z-[10000] flex items-center justify-center bg-[#0A0A0A] transition-transform duration-[1.8s] ease-[cubic-bezier(0.64,0,0.08,1)]
-        ${stage === 'sliding' ? '-translate-y-full' : 'translate-y-0'}
+        ${stage === "sliding" ? "-translate-y-full" : "translate-y-0"}
       `}
     >
       <div className="absolute inset-0 bg-noise opacity-[0.04] pointer-events-none z-0"></div>
@@ -193,11 +230,10 @@ const LoadingScreen = ({ stage }: { stage: string }) => {
   );
 };
 
-
 // --- HERO SECTION COMPONENT ---
 const Hero = () => {
   const scrollToWork = () => {
-    document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -210,13 +246,17 @@ const Hero = () => {
             I Don't Just Write Code.
           </p>
           <h1 className="font-heading text-[13vw] sm:text-[5.5rem] md:text-[8rem] lg:text-[10rem] leading-[0.9] md:leading-[0.85] text-[#F3F2EE] tracking-tight max-w-6xl w-full">
-            I Build Experiences<br />
-            <span className="text-[#D6B87C] italic pr-2 md:pr-4">That Convert</span>
+            I Build Experiences
+            <br />
+            <span className="text-[#D6B87C] italic pr-2 md:pr-4">
+              That Convert
+            </span>
           </h1>
         </div>
 
         <p className="animate-fade-in-up [animation-delay:300ms] opacity-0 fill-mode-forwards font-body mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-[#A1A1AA] max-w-2xl leading-relaxed font-light">
-          Frontend developer who ships fast, thinks in systems, and uses AI to build what takes others a sprint —{' '}
+          Frontend developer who ships fast, thinks in systems, and uses AI to
+          build what takes others a sprint —{" "}
           <span className="text-[#F3F2EE] font-normal border-b border-[#D6B87C]/30 pb-0.5 relative inline-block group cursor-default">
             in a day.
             <span className="absolute inset-0 bg-[#D6B87C]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg pointer-events-none"></span>
@@ -224,17 +264,17 @@ const Hero = () => {
         </p>
 
         <div className="animate-fade-in-up [animation-delay:500ms] opacity-0 fill-mode-forwards mt-10 md:mt-14 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto px-4 sm:px-0">
-          <button 
+          <button
             onClick={scrollToWork}
             className="group relative inline-flex items-center justify-center gap-4 px-2 py-2 pr-6 font-body font-medium text-[15px] text-[#0A0A0A] bg-[#F3F2EE] rounded-full overflow-hidden transition-all duration-400 ease-out hover:scale-[1.04] hover:shadow-[0_0_40px_-10px_#D6B87C] w-full sm:w-auto"
           >
             <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-[#0A0A0A]/10 group-hover:bg-[#D6B87C] transition-colors duration-400">
-               <ArrowRight className="w-5 h-5 text-[#0A0A0A] group-hover:translate-x-0.5 transition-transform duration-400" />
+              <ArrowRight className="w-5 h-5 text-[#0A0A0A] group-hover:translate-x-0.5 transition-transform duration-400" />
             </div>
             <span className="tracking-wide">See My Work</span>
           </button>
 
-          <a 
+          <a
             href="YOUR_RESUME_URL_HERE.pdf" // Replace with your actual resume URL
             target="_blank"
             rel="noopener noreferrer"
@@ -249,14 +289,18 @@ const Hero = () => {
   );
 };
 
-
 // --- PHILOSOPHY SECTION COMPONENT ---
 const Philosophy = () => {
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLElement>(
+    null
+  ) as React.RefObject<HTMLElement>;
   const scrollProgress = useTextRevealScroll(containerRef);
 
   return (
-    <section ref={containerRef} className="relative h-[250vh] bg-[#0A0A0A] border-t border-white/[0.05] z-0">
+    <section
+      ref={containerRef}
+      className="relative h-[250vh] bg-[#0A0A0A] border-t border-white/[0.05] z-0"
+    >
       <div className="sticky top-0 h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-12 max-w-6xl mx-auto py-24">
         <div className="mb-12 md:mb-20">
           <p className="font-accent text-[#D6B87C] text-xs md:text-sm tracking-[0.2em] uppercase mb-6 flex items-center gap-4">
@@ -264,24 +308,32 @@ const Philosophy = () => {
             01 Philosophy
           </p>
           <h2 className="font-heading text-[10vw] sm:text-5xl md:text-6xl lg:text-[5rem] text-[#F3F2EE] max-w-4xl leading-[1.05] tracking-tight">
-            Most developers can build a website.<br />
-            <span className="text-[#A1A1AA] italic">Few can build one that works</span>
+            Most developers can build a website.
+            <br />
+            <span className="text-[#A1A1AA] italic">
+              Few can build one that works
+            </span>
           </h2>
         </div>
 
         <div className="font-body text-lg sm:text-xl md:text-3xl lg:text-4xl leading-relaxed md:leading-[1.4] text-[#F3F2EE] font-light max-w-4xl">
           {PHILOSOPHY_WORDS.map((word, i) => {
             const start = i / PHILOSOPHY_WORDS.length;
-            const end = start + (1 / PHILOSOPHY_WORDS.length);
+            const end = start + 1 / PHILOSOPHY_WORDS.length;
             let opacity = 0.15;
             if (scrollProgress >= end) {
               opacity = 1;
             } else if (scrollProgress > start) {
-              opacity = 0.15 + 0.85 * ((scrollProgress - start) / (end - start));
+              opacity =
+                0.15 + 0.85 * ((scrollProgress - start) / (end - start));
             }
 
             return (
-              <span key={i} style={{ opacity, transition: 'opacity 0.1s ease-out' }} className="inline-block mr-[0.25em] mb-[0.1em]">
+              <span
+                key={i}
+                style={{ opacity, transition: "opacity 0.1s ease-out" }}
+                className="inline-block mr-[0.25em] mb-[0.1em]"
+              >
                 {word}
               </span>
             );
@@ -292,13 +344,12 @@ const Philosophy = () => {
   );
 };
 
-
 // --- EXPERTISE SECTION COMPONENT ---
 const Expertise = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const followerRef = useRef<HTMLDivElement>(null);
-  
+
   const mousePos = useRef({ x: 0, y: 0 });
   const currentPos = useRef({ x: 0, y: 0 });
 
@@ -316,16 +367,18 @@ const Expertise = () => {
 
     const loop = () => {
       if (isVisible) {
-        currentPos.current.x += (mousePos.current.x - currentPos.current.x) * 0.15;
-        currentPos.current.y += (mousePos.current.y - currentPos.current.y) * 0.15;
-        
+        currentPos.current.x +=
+          (mousePos.current.x - currentPos.current.x) * 0.15;
+        currentPos.current.y +=
+          (mousePos.current.y - currentPos.current.y) * 0.15;
+
         if (followerRef.current) {
           followerRef.current.style.transform = `translate3d(calc(${currentPos.current.x}px - 50%), calc(${currentPos.current.y}px - 50%), 0)`;
         }
       }
       rafId = requestAnimationFrame(loop);
     };
-    
+
     loop();
 
     const onMouseMove = (e: MouseEvent) => {
@@ -333,18 +386,20 @@ const Expertise = () => {
       mousePos.current.y = e.clientY;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
     return () => {
       cancelAnimationFrame(rafId);
-      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener("mousemove", onMouseMove);
       observer.disconnect();
     };
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-[#0A0A0A] overflow-hidden z-20 mt-[-100vh] shadow-[0_-30px_50px_rgba(0,0,0,0.8)] border-t border-white/10">
+    <section
+      ref={sectionRef}
+      className="relative py-20 md:py-28 bg-[#0A0A0A] overflow-hidden z-20 mt-[-100vh] shadow-[0_-30px_50px_rgba(0,0,0,0.8)] border-t border-white/10"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl relative z-10">
-        
         <div className="mb-12 md:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <p className="font-accent text-[#D6B87C] text-xs md:text-sm tracking-[0.2em] uppercase mb-4 md:mb-6 flex items-center gap-4">
@@ -361,7 +416,10 @@ const Expertise = () => {
           </p>
         </div>
 
-        <div className="flex flex-col w-full border-t border-white/10" onMouseLeave={() => setHoveredIdx(null)}>
+        <div
+          className="flex flex-col w-full border-t border-white/10"
+          onMouseLeave={() => setHoveredIdx(null)}
+        >
           {EXPERTISE_SERVICES.map((s, i) => {
             const isHovered = hoveredIdx === i;
             const isDimmed = hoveredIdx !== null && !isHovered;
@@ -371,22 +429,32 @@ const Expertise = () => {
                 key={s.id}
                 onMouseEnter={() => setHoveredIdx(i)}
                 className={`group flex flex-col lg:flex-row items-start lg:items-center justify-between py-8 md:py-12 border-b border-white/10 transition-all duration-300 ease-out cursor-pointer
-                  ${isDimmed ? 'opacity-30 blur-[2px]' : 'opacity-100 blur-0'}
-                  ${isHovered ? 'lg:px-8 bg-white/[0.02]' : 'lg:px-0'}
+                  ${isDimmed ? "opacity-30 blur-[2px]" : "opacity-100 blur-0"}
+                  ${isHovered ? "lg:px-8 bg-white/[0.02]" : "lg:px-0"}
                 `}
               >
                 <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8 w-full lg:w-1/2 relative z-20">
-                  <span className={`font-accent text-sm md:text-base transition-colors duration-300 ${isHovered ? 'text-[#D6B87C]' : 'text-[#A1A1AA]/50'}`}>
+                  <span
+                    className={`font-accent text-sm md:text-base transition-colors duration-300 ${
+                      isHovered ? "text-[#D6B87C]" : "text-[#A1A1AA]/50"
+                    }`}
+                  >
                     /{s.id}
                   </span>
-                  <h3 className={`font-heading text-[10vw] sm:text-6xl md:text-7xl lg:text-[4.5rem] transition-all duration-300 ease-out ${isHovered ? 'text-[#D6B87C]' : 'text-[#F3F2EE]'}`}>
+                  <h3
+                    className={`font-heading text-[10vw] sm:text-6xl md:text-7xl lg:text-[4.5rem] transition-all duration-300 ease-out ${
+                      isHovered ? "text-[#D6B87C]" : "text-[#F3F2EE]"
+                    }`}
+                  >
                     {s.title}
                   </h3>
                 </div>
 
-                <div className={`mt-4 lg:mt-0 w-full lg:w-[500px] lg:shrink-0 transition-opacity duration-300 ease-out relative z-20
-                  ${isHovered ? 'opacity-100' : 'lg:opacity-0'}
-                `}>
+                <div
+                  className={`mt-4 lg:mt-0 w-full lg:w-[500px] lg:shrink-0 transition-opacity duration-300 ease-out relative z-20
+                  ${isHovered ? "opacity-100" : "lg:opacity-0"}
+                `}
+                >
                   <p className="font-body text-[#A1A1AA] text-base md:text-lg leading-relaxed font-light">
                     {s.body}
                   </p>
@@ -397,17 +465,19 @@ const Expertise = () => {
         </div>
       </div>
 
-      <div 
+      <div
         ref={followerRef}
         className={`hidden lg:block fixed top-0 left-0 w-[380px] h-[450px] pointer-events-none z-[100] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]
-          ${hoveredIdx !== null ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}
+          ${
+            hoveredIdx !== null ? "opacity-100 scale-100" : "opacity-0 scale-50"
+          }
         `}
       >
         {EXPERTISE_SERVICES.map((s, i) => (
-          <div 
+          <div
             key={`follower-${s.id}`}
             className={`absolute inset-0 transition-opacity duration-500
-              ${hoveredIdx === i ? 'opacity-100 delay-100' : 'opacity-0'}
+              ${hoveredIdx === i ? "opacity-100 delay-100" : "opacity-0"}
             `}
           >
             {s.graphic}
@@ -418,11 +488,13 @@ const Expertise = () => {
   );
 };
 
-
 // --- PROJECTS SECTION COMPONENT ---
 const Projects = () => {
   return (
-    <section id="work" className="relative py-32 md:py-48 bg-[#0A0A0A] border-t border-white/[0.05] z-20">
+    <section
+      id="work"
+      className="relative py-32 md:py-48 bg-[#0A0A0A] border-t border-white/[0.05] z-20"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-6xl">
         <div className="mb-16 md:mb-32">
           <p className="font-accent text-[#D6B87C] text-xs md:text-sm tracking-[0.2em] uppercase mb-6 flex items-center gap-4">
@@ -437,16 +509,15 @@ const Projects = () => {
 
         <div className="relative mt-12 md:mt-20 w-full pb-[15vh] lg:pb-[10vh]">
           {PROJECTS_DATA.map((project, index) => (
-            <div 
+            <div
               key={project.id}
               className="sticky w-full"
               style={{
                 top: `calc(8vh + ${index * 25}px)`,
-                paddingBottom: '6vh'
+                paddingBottom: "6vh",
               }}
             >
               <div className="group relative w-full overflow-hidden rounded-[1.5rem] md:rounded-[2rem] border border-white/10 bg-[#0F0F0F] p-6 sm:p-8 md:p-10 lg:p-12 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] md:shadow-[0_-20px_50px_rgba(0,0,0,0.6)] transition-all duration-700 ease-out hover:border-[#D6B87C]/30 flex flex-col gap-6 hover:bg-[#121212]">
-                
                 <div className="w-full flex flex-col relative z-10 max-w-4xl">
                   <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                     <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/10 font-accent text-[#F3F2EE] text-xs md:text-sm group-hover:bg-[#D6B87C] group-hover:text-[#0A0A0A] transition-colors duration-500">
@@ -456,22 +527,24 @@ const Projects = () => {
                       {project.category}
                     </span>
                   </div>
-                  
+
                   <h3 className="font-heading text-[8vw] sm:text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-[#F3F2EE] mb-4 group-hover:text-[#D6B87C] transition-colors duration-500">
                     {project.title}
                   </h3>
-                  
+
                   <p className="font-body text-[#A1A1AA] text-sm sm:text-base lg:text-lg leading-relaxed font-light mb-6">
                     {project.desc}
                   </p>
-                  
-                  <a 
+
+                  <a
                     href={project.projectUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 w-fit font-accent text-xs sm:text-sm text-[#F3F2EE] uppercase tracking-widest hover:text-[#D6B87C] transition-colors group/btn mb-2"
                   >
-                    <span className="border-b border-[#F3F2EE]/30 group-hover/btn:border-[#D6B87C] pb-1 transition-colors">View Project</span>
+                    <span className="border-b border-[#F3F2EE]/30 group-hover/btn:border-[#D6B87C] pb-1 transition-colors">
+                      View Project
+                    </span>
                     <ExternalLink className="w-4 h-4 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -480,8 +553,8 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-noise opacity-[0.05] z-20 pointer-events-none mix-blend-screen"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none"></div>
                   {/* OPTIMIZATION: Added loading="lazy" so heavy images don't block initial page render */}
-                  <img 
-                    src={project.imgUrl} 
+                  <img
+                    src={project.imgUrl}
                     alt={project.title}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-[1.5s] ease-out group-hover:scale-105"
@@ -517,7 +590,7 @@ const SkillsStack = () => {
 
           <div className="w-full lg:w-2/3 flex flex-col">
             {SKILLS_CATEGORIES.map((category, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="group flex flex-col border-b border-white/10 py-10 first:pt-0 last:border-b-0 hover:border-[#D6B87C]/40 transition-colors duration-500"
               >
@@ -527,10 +600,10 @@ const SkillsStack = () => {
                   </span>
                   {category.title}
                 </h3>
-                
+
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   {category.skills.map((skill, skillIdx) => (
-                    <div 
+                    <div
                       key={skillIdx}
                       className="px-4 md:px-5 py-2 md:py-3 rounded-full border border-white/10 bg-white/[0.01] backdrop-blur-sm font-body text-[#A1A1AA] text-xs md:text-sm transition-all duration-400 ease-out cursor-default hover:bg-[#D6B87C] hover:text-[#0A0A0A] hover:border-[#D6B87C] hover:scale-105 hover:shadow-[0_0_20px_rgba(214,184,124,0.3)] group-hover:border-white/20 group-hover:bg-white/[0.03]"
                     >
@@ -547,9 +620,14 @@ const SkillsStack = () => {
   );
 };
 
-
 // --- SPOTLIGHT CARD COMPONENT (OPTIMIZED NO-RENDER PHYSICS) ---
-const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
+const SpotlightCard = ({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [opacity, setOpacity] = useState(0);
 
@@ -560,8 +638,8 @@ const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode
     const rect = divRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    divRef.current.style.setProperty('--mouse-x', `${x}px`);
-    divRef.current.style.setProperty('--mouse-y', `${y}px`);
+    divRef.current.style.setProperty("--mouse-x", `${x}px`);
+    divRef.current.style.setProperty("--mouse-y", `${y}px`);
   };
 
   return (
@@ -588,7 +666,6 @@ const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode
   );
 };
 
-
 // --- ACHIEVEMENTS SECTION COMPONENT ---
 const Achievements = () => {
   return (
@@ -596,7 +673,6 @@ const Achievements = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-[#D6B87C]/5 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 max-w-6xl">
-        
         <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <div className="flex items-center gap-4 mb-6">
@@ -606,10 +682,12 @@ const Achievements = () => {
               </p>
               <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-[#D6B87C]/30 bg-[#D6B87C]/10 backdrop-blur-sm">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#D6B87C] animate-pulse"></div>
-                <span className="font-accent text-[9px] md:text-[10px] text-[#D6B87C] uppercase tracking-widest hidden sm:block">Live Impact</span>
+                <span className="font-accent text-[9px] md:text-[10px] text-[#D6B87C] uppercase tracking-widest hidden sm:block">
+                  Live Impact
+                </span>
               </div>
             </div>
-            
+
             <h2 className="font-heading text-[11vw] sm:text-6xl md:text-7xl lg:text-[6rem] text-[#F3F2EE] leading-[0.95] tracking-tight">
               Proof Of <br />
               <span className="text-[#A1A1AA] italic">Performance</span>
@@ -620,12 +698,20 @@ const Achievements = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {ACHIEVEMENTS_DATA.map((award, idx) => {
             const Icon = award.icon;
-            const isFeatured = idx === 0; 
+            const isFeatured = idx === 0;
 
             return (
-              <SpotlightCard key={award.id} className={isFeatured ? "lg:col-span-2" : "lg:col-span-1"}>
-                <div className={`flex flex-col h-full ${isFeatured ? "lg:flex-row lg:items-center lg:justify-between gap-12 lg:gap-20" : "gap-10"}`}>
-
+              <SpotlightCard
+                key={award.id}
+                className={isFeatured ? "lg:col-span-2" : "lg:col-span-1"}
+              >
+                <div
+                  className={`flex flex-col h-full ${
+                    isFeatured
+                      ? "lg:flex-row lg:items-center lg:justify-between gap-12 lg:gap-20"
+                      : "gap-10"
+                  }`}
+                >
                   <div className="flex justify-between items-start lg:w-auto">
                     <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-white/10 flex items-center justify-center bg-[#0A0A0A] group-hover:border-[#D6B87C]/50 group-hover:bg-[#D6B87C]/10 group-hover:scale-110 transition-all duration-500 ease-out shadow-[0_0_0_0_rgba(214,184,124,0)] group-hover:shadow-[0_0_30px_0_rgba(214,184,124,0.2)]">
                       <Icon className="w-6 h-6 md:w-7 md:h-7 text-[#A1A1AA] group-hover:text-[#D6B87C] transition-colors duration-500" />
@@ -637,7 +723,11 @@ const Achievements = () => {
                     )}
                   </div>
 
-                  <div className={`flex flex-col ${isFeatured ? "lg:w-[70%]" : ""}`}>
+                  <div
+                    className={`flex flex-col ${
+                      isFeatured ? "lg:w-[70%]" : ""
+                    }`}
+                  >
                     <div className="flex items-center gap-4 mb-4">
                       <p className="font-accent text-[#D6B87C] text-[10px] md:text-xs uppercase tracking-[0.2em]">
                         {award.subtitle}
@@ -649,15 +739,26 @@ const Achievements = () => {
                       )}
                     </div>
 
-                    <h3 className={`font-heading text-[#F3F2EE] leading-[1.05] mb-4 md:mb-6 group-hover:text-white transition-colors duration-500 ${isFeatured ? "text-4xl md:text-5xl lg:text-[3.5rem]" : "text-3xl md:text-4xl"}`}>
+                    <h3
+                      className={`font-heading text-[#F3F2EE] leading-[1.05] mb-4 md:mb-6 group-hover:text-white transition-colors duration-500 ${
+                        isFeatured
+                          ? "text-4xl md:text-5xl lg:text-[3.5rem]"
+                          : "text-3xl md:text-4xl"
+                      }`}
+                    >
                       {award.title}
                     </h3>
 
-                    <p className={`font-body text-[#A1A1AA] leading-relaxed font-light group-hover:text-[#E0E0E0] transition-colors duration-500 ${isFeatured ? "text-base md:text-lg max-w-2xl" : "text-sm md:text-base"}`}>
+                    <p
+                      className={`font-body text-[#A1A1AA] leading-relaxed font-light group-hover:text-[#E0E0E0] transition-colors duration-500 ${
+                        isFeatured
+                          ? "text-base md:text-lg max-w-2xl"
+                          : "text-sm md:text-base"
+                      }`}
+                    >
                       {award.desc}
                     </p>
                   </div>
-
                 </div>
               </SpotlightCard>
             );
@@ -668,14 +769,18 @@ const Achievements = () => {
   );
 };
 
-
 // --- ABOUT SECTION COMPONENT ---
 const About = () => {
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLElement>(
+    null
+  ) as React.RefObject<HTMLElement>;
   const scrollProgress = useTextRevealScroll(containerRef);
 
   return (
-    <section ref={containerRef} className="relative h-[350vh] bg-[#0A0A0A] border-t border-white/[0.05] z-20">
+    <section
+      ref={containerRef}
+      className="relative h-[350vh] bg-[#0A0A0A] border-t border-white/[0.05] z-20"
+    >
       <div className="sticky top-0 h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-12 max-w-6xl mx-auto pt-20 pb-32 md:py-20">
         <div className="mb-8 md:mb-16">
           <p className="font-accent text-[#D6B87C] text-xs md:text-sm tracking-[0.2em] uppercase mb-4 md:mb-6 flex items-center gap-4">
@@ -691,19 +796,20 @@ const About = () => {
         <div className="font-body text-base sm:text-lg md:text-2xl lg:text-3xl leading-relaxed md:leading-[1.5] text-[#F3F2EE] font-light max-w-5xl">
           {ABOUT_WORDS.map((word, i) => {
             const start = i / ABOUT_WORDS.length;
-            const end = start + (1 / ABOUT_WORDS.length);
+            const end = start + 1 / ABOUT_WORDS.length;
             let opacity = 0.15;
-            
+
             if (scrollProgress >= end) {
               opacity = 1;
             } else if (scrollProgress > start) {
-              opacity = 0.15 + 0.85 * ((scrollProgress - start) / (end - start));
+              opacity =
+                0.15 + 0.85 * ((scrollProgress - start) / (end - start));
             }
 
             return (
-              <span 
-                key={i} 
-                style={{ opacity, transition: 'opacity 0.1s ease-out' }} 
+              <span
+                key={i}
+                style={{ opacity, transition: "opacity 0.1s ease-out" }}
                 className="inline-block mr-[0.25em] mb-[0.1em]"
               >
                 {word}
@@ -715,7 +821,6 @@ const About = () => {
     </section>
   );
 };
-
 
 // --- CONTACT SECTION COMPONENT ---
 const Contact = () => {
@@ -737,15 +842,17 @@ const Contact = () => {
           </h2>
 
           <p className="font-body text-[#A1A1AA] text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-2xl mb-12 md:mb-16">
-            If you need a frontend developer who ships fast, thinks clearly, and takes ownership — I'm ready. Whether it's an internship, a project, or a conversation, my inbox is open.
+            If you need a frontend developer who ships fast, thinks clearly, and
+            takes ownership — I'm ready. Whether it's an internship, a project,
+            or a conversation, my inbox is open.
           </p>
 
-          <a 
+          <a
             href="mailto:kritagya1905@gmail.com"
             className="group relative inline-flex items-center justify-center gap-4 px-3 py-3 pr-8 font-body font-medium text-[15px] md:text-[17px] text-[#0A0A0A] bg-[#F3F2EE] rounded-full overflow-hidden transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_0_40px_-15px_#D6B87C] w-fit mb-12"
           >
             <div className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#0A0A0A]/10 group-hover:bg-[#D6B87C] transition-colors duration-500">
-               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-[#0A0A0A] group-hover:translate-x-1 transition-transform duration-500" />
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-[#0A0A0A] group-hover:translate-x-1 transition-transform duration-500" />
             </div>
             <span>Get In Touch</span>
           </a>
@@ -755,14 +862,17 @@ const Contact = () => {
           <div className="font-accent text-[#A1A1AA] text-[10px] md:text-xs uppercase tracking-widest">
             © {new Date().getFullYear()} Kritagya
           </div>
-          
+
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
             {[
-              { name: 'Email', url: 'mailto:kritagya1905@gmail.com' },
-              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/kritagyajaiswal19/' },
-              { name: 'GitHub', url: 'https://github.com/kritagya-19' }
+              { name: "Email", url: "mailto:kritagya1905@gmail.com" },
+              {
+                name: "LinkedIn",
+                url: "https://www.linkedin.com/in/kritagyajaiswal19/",
+              },
+              { name: "GitHub", url: "https://github.com/kritagya-19" },
             ].map((link) => (
-              <a 
+              <a
                 key={link.name}
                 href={link.url}
                 target="_blank"
@@ -783,11 +893,12 @@ const Contact = () => {
   );
 };
 
-
 // --- CURSOR TRAIL ANIMATION COMPONENT ---
 const CursorTrail = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const points = useRef<{ x: number; y: number }[]>(Array.from({ length: 30 }, () => ({ x: 0, y: 0 })));
+  const points = useRef<{ x: number; y: number }[]>(
+    Array.from({ length: 30 }, () => ({ x: 0, y: 0 }))
+  );
   const mouse = useRef({ x: 0, y: 0 });
   const isMoving = useRef(false);
 
@@ -796,7 +907,7 @@ const CursorTrail = () => {
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -817,8 +928,8 @@ const CursorTrail = () => {
       mouse.current.y = e.clientY;
     };
 
-    window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("resize", resize);
+    window.addEventListener("mousemove", onMouseMove);
     resize();
 
     const draw = () => {
@@ -835,15 +946,15 @@ const CursorTrail = () => {
           pt.y += (prevPt.y - pt.y) * 0.4;
         }
 
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
 
         for (let i = 1; i < points.current.length; i++) {
           ctx.beginPath();
           ctx.moveTo(points.current[i - 1].x, points.current[i - 1].y);
           ctx.lineTo(points.current[i].x, points.current[i].y);
-          
-          const progress = 1 - (i / points.current.length);
+
+          const progress = 1 - i / points.current.length;
           ctx.strokeStyle = `rgba(214, 184, 124, ${progress})`;
           ctx.lineWidth = progress * 2.5;
           ctx.stroke();
@@ -856,8 +967,8 @@ const CursorTrail = () => {
     draw();
 
     return () => {
-      window.removeEventListener('resize', resize);
-      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", onMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -865,52 +976,61 @@ const CursorTrail = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-[9999] hidden md:block" 
+      className="fixed inset-0 pointer-events-none z-[9999] hidden md:block"
     />
   );
 };
 
-
 // --- MAIN APP COMPONENT ---
 export default function App() {
-  const [appState, setAppState] = useState('loading'); 
+  const [appState, setAppState] = useState("loading");
 
   useEffect(() => {
     // Ensure we start at top
-    window.scrollTo(0, 0); 
-    
-    // FIX: Intercept scroll events instead of hiding the scrollbar. 
+    window.scrollTo(0, 0);
+
+    // FIX: Intercept scroll events instead of hiding the scrollbar.
     // This keeps the scrollbar visible during loading, preventing layout shifts!
     const preventScroll = (e: Event) => e.preventDefault();
     const preventKeyScroll = (e: KeyboardEvent) => {
-      if (['Space', 'ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End'].includes(e.code)) {
+      if (
+        [
+          "Space",
+          "ArrowUp",
+          "ArrowDown",
+          "PageUp",
+          "PageDown",
+          "Home",
+          "End",
+        ].includes(e.code)
+      ) {
         e.preventDefault();
       }
     };
 
-    window.addEventListener('wheel', preventScroll, { passive: false });
-    window.addEventListener('touchmove', preventScroll, { passive: false });
-    window.addEventListener('keydown', preventKeyScroll, { passive: false });
-    
+    window.addEventListener("wheel", preventScroll, { passive: false });
+    window.addEventListener("touchmove", preventScroll, { passive: false });
+    window.addEventListener("keydown", preventKeyScroll, { passive: false });
+
     // OPTIMIZATION: Timers increased by 100ms to perfectly accommodate the new buttery-smooth base delay
     const t1 = setTimeout(() => {
-      setAppState('sliding');
-    }, 1900); 
-    
+      setAppState("sliding");
+    }, 1900);
+
     const t2 = setTimeout(() => {
-      setAppState('ready');
+      setAppState("ready");
       // Release the scroll lock when loading finishes
-      window.removeEventListener('wheel', preventScroll);
-      window.removeEventListener('touchmove', preventScroll);
-      window.removeEventListener('keydown', preventKeyScroll);
-    }, 3700); 
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+      window.removeEventListener("keydown", preventKeyScroll);
+    }, 3700);
 
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
-      window.removeEventListener('wheel', preventScroll);
-      window.removeEventListener('touchmove', preventScroll);
-      window.removeEventListener('keydown', preventKeyScroll);
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+      window.removeEventListener("keydown", preventKeyScroll);
     };
   }, []);
 
@@ -951,14 +1071,23 @@ export default function App() {
         `}
       </style>
 
-      <div className={`bg-[#0A0A0A] bg-noise min-h-screen text-[#F3F2EE] selection:bg-[#D6B87C]/30 selection:text-[#0A0A0A] ${appState === 'loading' ? 'app-loading' : ''}`}>
-        
+      <div
+        className={`bg-[#0A0A0A] bg-noise min-h-screen text-[#F3F2EE] selection:bg-[#D6B87C]/30 selection:text-[#0A0A0A] ${
+          appState === "loading" ? "app-loading" : ""
+        }`}
+      >
         <LoadingScreen stage={appState} />
         <CursorTrail />
-        
-        <div className={`transition-all duration-[1.8s] ease-[cubic-bezier(0.64,0,0.08,1)] w-full will-change-transform
-          ${appState === 'loading' ? 'translate-y-24 scale-[0.98] blur-[8px] opacity-0 pointer-events-none' : 'translate-y-0 scale-100 blur-0 opacity-100'}
-        `}>
+
+        <div
+          className={`transition-all duration-[1.8s] ease-[cubic-bezier(0.64,0,0.08,1)] w-full will-change-transform
+          ${
+            appState === "loading"
+              ? "translate-y-24 scale-[0.98] blur-[8px] opacity-0 pointer-events-none"
+              : "translate-y-0 scale-100 blur-0 opacity-100"
+          }
+        `}
+        >
           <Hero />
           <Philosophy />
           <Expertise />
