@@ -275,7 +275,7 @@ const Hero = () => {
           </button>
 
           <a
-            href="YOUR_RESUME_URL_HERE.pdf" // Replace with your actual resume URL
+            href="kritagya_resume.pdf" // Replace with your actual resume URL
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 md:py-4 rounded-full font-body font-medium text-[15px] text-[#F3F2EE] border border-white/10 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-400 ease-out hover:bg-white/[0.08] hover:border-[#D6B87C]/50 hover:scale-[1.02] w-full sm:w-auto"
