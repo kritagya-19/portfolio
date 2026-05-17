@@ -275,7 +275,7 @@ const Hero = () => {
           </button>
 
           <a
-            href="https://docs.google.com/document/d/1Ki736gyriy6vCQu-01vn7AWXY2_MNe6J/edit?usp=sharing&ouid=114503432496823111083&rtpof=true&sd=true" // Replace with your actual resume URL
+            href="https://docs.google.com/document/d/1jl4kHO3GCWMP1PntFYCZWbzHMQsCTEKw/edit?usp=sharing&ouid=114503432496823111083&rtpof=true&sd=true" // Replace with your actual resume URL
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 md:py-4 rounded-full font-body font-medium text-[15px] text-[#F3F2EE] border border-white/10 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-400 ease-out hover:bg-white/[0.08] hover:border-[#D6B87C]/50 hover:scale-[1.02] w-full sm:w-auto"
