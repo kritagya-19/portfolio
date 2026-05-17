@@ -51,22 +51,22 @@ const PROJECTS_DATA = [
 const SKILLS_CATEGORIES = [
   {
     title: "Frontend Development",
-    skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS"],
+    skills: ["HTML", "CSS", "JavaScript", "React.js", "Next.js", "Tailwind CSS"],
   },
   {
-    title: "AI & Modern Development",
+    title: "AI Engineering",
     skills: [
       "Prompt Engineering",
-      "Vibe Coding",
-      "AI Automation (Make.com, n8n)",
-      "ChatGPT",
-      "Claude",
-      "Gemini",
+      "Context Engineering",
+      "RAG",
+      "MCP Server",
+      "AI Automation",
+      "LLM Integration"
     ],
   },
   {
-    title: "Developer Tools",
-    skills: ["VS Code", "Git & GitHub", "Cursor", "Claude Code", "Antigravity"],
+    title: "DevOps & Deployment",
+    skills: ["Git", "GitHub", "GitHub Actions", "CI/CD Pipelines", "Docker"],
   },
   {
     title: "What Makes the Work Convert",
@@ -74,8 +74,6 @@ const SKILLS_CATEGORIES = [
       "Landing Page Optimisation",
       "Conversion-Focused UI",
       "Consumer Psychology",
-      "Content Strategy",
-      "Personal Branding",
       "Persuasion Architecture",
     ],
   },
